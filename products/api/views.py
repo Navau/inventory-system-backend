@@ -17,3 +17,7 @@ class ProductApiViewSet(ModelViewSet):
     def create(self, request, *args, **kwargs):
         print("REQUEST_DATA", request.data)
         return super().create(request, *args, **kwargs)
+
+    def partial_update(self, request, *args, **kwargs):
+        print("REQUEST_DATA", request.data)
+        return super().partial_update(request, *args, **kwargs)
