@@ -13,7 +13,7 @@ class ProductApiViewSet(ModelViewSet):
     serializer_class = ProductSerializer
     queryset = Product.objects.all().order_by("id")
     filter_backends = [DjangoFilterBackend, SearchFilter]
-    filterset_fields = ["category", "deposit"]
+    filterset_fields = ["category", "deposit", "active"]
     search_fields = [
         "name",
         "description",
@@ -22,6 +22,7 @@ class ProductApiViewSet(ModelViewSet):
         "update_at",
         "category__name",
         "deposit__name",
+        "active",
     ]
 
     def create(self, request, *args, **kwargs):
